@@ -22,7 +22,7 @@ import com.phone.callerloc.util.HttpUtil;
  * @version 1.0
  * Remark：<p>
  * 淘宝网
-	API地址： http://cx.shouji.360.cn/phonearea.php?number=15810283538
+	API地址： http://cx.shouji.360.cn/phonearea.php?number=13800138000
 	参数：
 	tel：手机号码
 	返回：JSON

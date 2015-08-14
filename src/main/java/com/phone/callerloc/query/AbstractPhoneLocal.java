@@ -34,16 +34,6 @@ public abstract class AbstractPhoneLocal implements IPhoneLocal {
 		return respMap;
 	}
 	
-	/**
-	 * 
-	 * 功能:判断是否是直辖市
-	 *<br /> 作者: 张凯
-	 * <br />创建日期:2015年8月14日
-	 * <br />修改者: mender
-	 * <br />修改日期: modifydate
-	 * @param province
-	 * @return
-	 */
 	protected boolean isCharteredCity(String province){
 		for (String city : charteredCitys) {
 			return city.equals(province);
