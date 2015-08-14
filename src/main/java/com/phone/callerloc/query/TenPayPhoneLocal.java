@@ -18,7 +18,7 @@ import com.phone.callerloc.util.HttpUtil;
  * 
  * 创建日期:2015年6月9日
  * <br />使用财付通查询手机归属地
- * @author leo
+ * @author 张凯
  * @mender：（文件的修改者，文件创建者之外的人）
  * @version 1.0
  * Remark：<p>
@@ -62,13 +62,11 @@ public class TenPayPhoneLocal extends AbstractPhoneLocal {
 				if(node == null){
 					return null;
 				}
-				map.put(RespMapKey.province.name(), node.getText());
+				map.put(RespMapKey.province.name(), node.getText().replaceAll("\\s+", "").replaceAll("-", ""));
 				node = doc.selectSingleNode("//supplier");
-				if(node == null){
-					map.put(RespMapKey.supplier.name(), "");
-				}else{
-					map.put(RespMapKey.supplier.name(), node.getText());
-				}
+				map.put(RespMapKey.supplier.name(), node == null ?"":node.getText().replaceAll("\\s+", "").replaceAll("-", ""));
+				node = doc.selectSingleNode("//city");
+				map.put(RespMapKey.city.name(), node == null ?"":node.getText().replaceAll("\\s+", "").replaceAll("-", ""));
 				return map;
 			}
 		} catch (DocumentException e) {

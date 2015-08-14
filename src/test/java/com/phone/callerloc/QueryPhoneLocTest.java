@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import com.phone.callerloc.query.IPhoneLocal;
 import com.phone.callerloc.query.PaypayPhoneLocal;
+import com.phone.callerloc.query.Qihu360PhoneLocal;
 import com.phone.callerloc.query.TaobaoPhoneLocal;
 import com.phone.callerloc.query.TenPayPhoneLocal;
 
@@ -65,6 +66,20 @@ public class QueryPhoneLocTest {
 		System.out.println(respMap);
 	}
 	
+	/**
+	 * 
+	 * 功能:奇虎360
+	 *<br /> 作者: leo
+	 * <br />创建日期:2015年8月14日
+	 * <br />修改者: mender
+	 * <br />修改日期: modifydate
+	 */
+	@Test
+	public void qihu(){
+		IPhoneLocal search = new Qihu360PhoneLocal();
+		Map<String, Object> respMap = search.getPhoneLocal("13800138000");
+		System.out.println(respMap);
+	}
 	/**
 	 * 
 	 * 功能:责任链查找

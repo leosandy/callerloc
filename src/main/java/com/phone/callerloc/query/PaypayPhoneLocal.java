@@ -61,16 +61,14 @@ public class PaypayPhoneLocal extends AbstractPhoneLocal {
 				JSONObject jsonObject = JSONObject.fromObject(matcher.group(1));
 				logger.info("phoneNo:{}归属地查询, 拍拍返回结果：{}",phoneNo,result);
 				String province = jsonObject.getString("province");
+				province = province.replaceAll("\\s+", "");
 				if(StringUtils.equals(province, "未知")){
 					return null;
 				}
 				Map<String, Object> map = new HashMap<String, Object>(2);
 				map.put(RespMapKey.province.name(), province);
-				if(jsonObject.containsKey("isp")){
-					map.put(RespMapKey.supplier.name(), jsonObject.getString("isp"));
-				}else{
-					map.put(RespMapKey.supplier.name(), "");
-				}
+				map.put(RespMapKey.supplier.name(), jsonObject.containsKey("isp") ? jsonObject.getString("isp").replaceAll("\\s+", ""):"");
+				map.put(RespMapKey.city.name(), jsonObject.containsKey("cityname") ?jsonObject.getString("cityname").replaceAll("\\s+", ""):"");
 				return map;
 			}
 		} catch (Exception e) {
