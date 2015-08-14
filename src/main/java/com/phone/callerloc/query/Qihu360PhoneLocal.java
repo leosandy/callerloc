@@ -50,27 +50,10 @@ public class Qihu360PhoneLocal extends AbstractPhoneLocal {
 	/**
 	 * 
 	 * 功能:电话归属地查询
-	 * <p><code style="color:red;">
-	 * Error:
-	 * 	__GetZoneResult_ = {
-		province:''
-		}
+	 * <p>返回结果：<code style="color:red;">
+	 * {"code":0,"data":{"province":"\u5317\u4eac","city":"","sp":"\u79fb\u52a8"}}
 	 * </code>
 	 * </p>
-	 * <p>
-	 * <code style="color:green;">
-	 * Success:
-	 * 	__GetZoneResult_ = {
-     *	mts:'1581028',
-     *	province:'北京',
-     *	catName:'中国移动',
-     *	telString:'15810283539',
-	 *	areaVid:'29400',
-	 *	ispVid:'3236139',
-	 *	carrier:'北京移动'
-	 *	}
-	 * </code>
-	 * </p> 
 	 *<br /> 作者: leo
 	 * <br />创建日期:2015年6月9日
 	 * <br />修改者: mender
