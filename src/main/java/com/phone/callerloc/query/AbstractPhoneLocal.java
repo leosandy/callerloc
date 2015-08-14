@@ -36,11 +36,17 @@ public abstract class AbstractPhoneLocal implements IPhoneLocal {
 	
 	protected boolean isCharteredCity(String province){
 		for (String city : charteredCitys) {
-			return city.equals(province);
+			if(city.equals(province)){
+				return true;
+			}
 		}
 		return false;
 	}
 	
+	
+	public static void main(String[] args) {
+		System.out.println();
+	}
 	protected abstract Map<String, Object> searchPhoneNumber(String phoneNo);
 
 	 enum RespMapKey{
